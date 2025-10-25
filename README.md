@@ -1,6 +1,6 @@
 # nbt2dict
 
-Python C extension to effeciently decode NBT data into a dictionary 
+Python C extension to efficiently decode NBT data into a dictionary.
 
 ### Installation
 ```
