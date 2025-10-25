@@ -1,0 +1,7 @@
+venv/
+.venv/
+.idea/
+cmake-build-debug/
+nbt2dict_lib.egg-info/
+build/
+out.data
