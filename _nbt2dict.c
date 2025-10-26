@@ -123,7 +123,7 @@ static PyObject *read_string(NBTParser *parser) {
   uint16_t length = read_size(parser);
 
   if (length <= 0) {
-    return PyUnicode_FromString("noname");
+    return PyUnicode_FromString("");
   }
 
   if (!parser->little_endian)
@@ -135,7 +135,7 @@ static PyObject *read_string(NBTParser *parser) {
   }
 
   PyObject *str = PyUnicode_DecodeUTF8(
-      (const char *)(parser->data + parser->pos), length, "strict");
+      (const char *)(parser->data + parser->pos), length, "ignore");
   parser->pos += length;
   return str;
 }
