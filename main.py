@@ -9,4 +9,5 @@ with open("out.data", "wb") as f:
     f.write(d)
 # d = b'\x0B\x02\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00'
 # print(d)
-print(parse(d))
+import json
+print(json.dumps(parse(d), indent=2))
