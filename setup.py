@@ -1,17 +1,5 @@
-from setuptools import setup
-from setuptools import Extension
+from setuptools import setup, Extension
 
+nbt2dict_extension = Extension("nbt2dict", ["nbt2dict.c"])
 
-setup(
-    name='nbt2dict-lib',
-    version='1',
-    description='Named Binary Tag to dictionary converter.',
-    ext_modules=[
-        Extension(
-            "_nbt2dict",
-            [
-                "_nbt2dict.c",
-            ],
-        ),
-    ],
-)
+setup(ext_modules=[nbt2dict_extension])

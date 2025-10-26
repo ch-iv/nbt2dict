@@ -358,7 +358,7 @@ static PyObject *read_tag_payload(NBTParser *parser, uint8_t tag_type) {
   }
 }
 
-static PyObject *parse(PyObject *self, PyObject *args) {
+static PyObject *parse_nbt(PyObject *self, PyObject *args) {
   Py_buffer data;
   if (!PyArg_ParseTuple(args, "y*", &data)) {
     return NULL;
@@ -390,12 +390,12 @@ static PyObject *parse(PyObject *self, PyObject *args) {
 }
 
 static PyMethodDef methods[] = {
-    {"parse", (PyCFunction)parse, METH_VARARGS,
-     "Parse NBT binary data and return Python dictionary"},
+    {"parse_nbt", (PyCFunction)parse_nbt, METH_VARARGS,
+     "Parses NBT binary data and returns a dictionary"},
     {NULL, NULL, 0, NULL}};
 
-static struct PyModuleDef module = {PyModuleDef_HEAD_INIT, "_nbt2dict",
-                                    "Fast NBT parser C extension for Python",
+static struct PyModuleDef module = {PyModuleDef_HEAD_INIT, "nbt2dict",
+                                    "Python C extension to efficiently decode NBT data into a dictionary",
                                     -1, methods};
 
-PyMODINIT_FUNC PyInit__nbt2dict(void) { return PyModule_Create(&module); }
+PyMODINIT_FUNC PyInit_nbt2dict(void) { return PyModule_Create(&module); }

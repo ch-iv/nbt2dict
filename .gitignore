@@ -3,5 +3,6 @@ venv/
 .idea/
 cmake-build-debug/
 nbt2dict_lib.egg-info/
+nbt2dict.egg-info/
 build/
 out.data
